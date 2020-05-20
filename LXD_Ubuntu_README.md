@@ -31,5 +31,46 @@ $ lxc list
 +---------------+---------+---------------------+------+-----------+-----------+
 ```
 
-### Launch a LXC VM
+## Launch a LXC VM
 
+Now we have LXD, and LXC installed and ready to use.. go ahead and instantiate a VM by hand
+
+```
+lxc launch ubuntu:18.04 your-app
+```
+
+to enter the VM you can perform the following
+
+```
+lxc exec your-app /bin/bash
+root@your-app:~# 
+```
+
+you now have root, inside `your-app` LXC VM
+
+you can install flask, setup python etc..
+
+```
+root@your-app:~# apt update
+root@your-app:~# apt upgrade 
+root@your-app:~# apt install vim python python-pip
+```
+
+Create a simple flask server likeso
+
+```
+from flask import Flask 
+app = Flask(__name__)
+
+@app.route("/") 
+def hello():
+    return "Hello World!"
+
+if __name__ == "__main__": 
+    app.run(host='0.0.0.0', port=5000)
+```
+
+
+```
+root@your-app:~# vim test_app.py
+```
