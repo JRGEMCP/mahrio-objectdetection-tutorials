@@ -56,7 +56,7 @@ root@your-app:~# apt upgrade
 root@your-app:~# apt install vim python python-pip
 ```
 
-Create a simple flask server likeso
+Create a simple flask server via `root@your-app:~# vim test_app.py`
 
 ```
 from flask import Flask 
@@ -68,9 +68,4 @@ def hello():
 
 if __name__ == "__main__": 
     app.run(host='0.0.0.0', port=5000)
-```
-
-
-```
-root@your-app:~# vim test_app.py
 ```
