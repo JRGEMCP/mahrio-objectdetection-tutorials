@@ -37,6 +37,7 @@ juju ssh <machine_num_of_postgresql>
 and from within the postgresql machine
 `sudo su postgres
 psql
-> \password`
+> \password
+```
 
 to change the default password 
