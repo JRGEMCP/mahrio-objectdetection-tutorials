@@ -35,7 +35,8 @@ juju ssh <machine_num_of_postgresql>
 
 ```
 and from within the postgresql machine
-`sudo su postgres
+```
+sudo su postgres
 psql
 > \password
 ```
