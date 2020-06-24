@@ -50,4 +50,6 @@ to change the default password
 
 ## some typical devices you add
 
+Thrift device
+
 `lxc config device add <LXC_IMAGE_NAME> myport9090 proxy listen=tcp:0.0.0.0:9090 connect=tcp:127.0.0.1:9090`
