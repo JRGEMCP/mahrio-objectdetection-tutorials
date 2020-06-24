@@ -16,6 +16,10 @@ deploy a bundle in your cwd
 
 `juju model-config logging-config="<root>=WARNING;unit=TRACE"`
 
+to watch just one module instead of the entire log
+
+`juju model-config --include-module sample-thrift-charm`
+
 ## postgresql specific commands
 
 the postgresql charm out of the box is not really useable locally.. it disallows connections
