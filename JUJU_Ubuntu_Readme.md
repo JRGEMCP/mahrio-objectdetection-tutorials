@@ -53,3 +53,40 @@ to change the default password
 Thrift device
 
 `lxc config device add <LXC_IMAGE_NAME> myport9090 proxy listen=tcp:0.0.0.0:9090 connect=tcp:127.0.0.1:9090`
+
+## Step 8 - Enable the PostgreSQL username password
+
+postgresql comes with a default user `postgres` , but we need to change the password before we login.
+
+you `juju ssh XX` into the instance running postgresql, and simply use the postgres user to change the password like so
+
+remember this is inside the postgres
+```
+> sudo su postgres
+> psql
+postgres=# \password
+```
+
+this will prompt you to enter a password.  Change it to whatever you want and make a note of it.  You will need it later.
+to quit the psql commandline just type `\q` and exit from the postgres instance.
+Now setup your beginning STONKS database, `CREATE DATABASE _____` and `\l` lists your current DBs.
+
+```
+postgres=# CREATE DATABASE mydb;
+CREATE DATABASE
+postgres=# \l
+                             List of databases
+   Name    |  Owner   | Encoding | Collate | Ctype |   Access privileges   
+-----------+----------+----------+---------+-------+-----------------------
+ postgres  | postgres | UTF8     | C       | C     | 
+ mydb      | postgres | UTF8     | C       | C     | 
+ template0 | postgres | UTF8     | C       | C     | =c/postgres          +
+           |          |          |         |       | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C       | C     | =c/postgres          +
+           |          |          |         |       | postgres=CTc/postgres
+(4 rows)
+```
+
+To quit the psql commandline just type `\q` and exit from the postgres instance.
+
+
