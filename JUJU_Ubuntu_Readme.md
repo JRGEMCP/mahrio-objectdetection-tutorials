@@ -47,6 +47,16 @@ psql
 
 to change the default password 
 
+You can grant or setup things yourself from there with the various users you might be gettting 
+```
+postgres=# GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO juju_meltano;
+GRANT
+postgres=# GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO juju_superset;
+GRANT
+postgres=# 
+
+```
+
 
 ## some typical devices you add
 
