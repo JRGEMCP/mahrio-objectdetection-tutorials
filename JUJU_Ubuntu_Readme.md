@@ -49,12 +49,10 @@ to change the default password
 
 You can grant or setup things yourself from there with the various users you might be gettting 
 ```
-postgres=# GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO juju_meltano;
+stonks=# \connect stonks;
+You are now connected to database "stonks" as user "postgres".
+stonks=# GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO juju_superset;
 GRANT
-postgres=# GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO juju_superset;
-GRANT
-postgres=# 
-
 ```
 
 
